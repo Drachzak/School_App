@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/founderFragment"
+        android:name="com.dzak.myapplication.Fragment.fragment.FounderFragment"
+        android:label="fragment_founder"
+        tools:layout="@layout/fragment_founder">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="https://scholar.google.com/citations?user=Qm27ZVYAAAAJ&amp;hl=en" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.dzak.myapplication.Fragment.fragment.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailHomeFragment"
+            app:destination="@id/detailHomeFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoFragment"
+        android:name="com.dzak.myapplication.Fragment.fragment.galery.PhotoFragment"
+        android:label="fragment_photo"
+        tools:layout="@layout/fragment_photo" >
+        <action
+            android:id="@+id/action_photoFragment_to_detailGaleryFragment2"
+            app:destination="@id/detailGaleryFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/prestasiFragment"
+        android:name="com.dzak.myapplication.Fragment.fragment.prestasi.PrestasiFragment"
+        android:label="fragment_prestasi"
+        tools:layout="@layout/fragment_prestasi" >
+        <action
+            android:id="@+id/action_prestasiFragment_to_detailPrestasiFragment"
+            app:destination="@id/detailPrestasiFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+
+        <argument
+            android:name="detailnamagalery"
+            app:argType="string"
+            android:defaultValue="detailnamagalery" />
+        <argument
+            android:name="detaildeskripsigalery"
+            app:argType="string"
+            android:defaultValue="detaildeskripsigalery" />
+        <argument
+            android:name="gambardetailgalery"
+            app:argType="integer"
+            android:defaultValue="0" />
+
+
+    <fragment
+        android:id="@+id/detailGaleryFragment"
+        android:name="com.dzak.myapplication.Fragment.fragment.galery.DetailGaleryFragment"
+        android:label="DetailGaleryFragment" >
+        <argument
+            android:name="namadetailgalery"
+            app:argType="string"
+            android:defaultValue="namadetailgalery" />
+        <argument
+            android:name="deskripsidetailgalery"
+            app:argType="string"
+            android:defaultValue="deskripsidetailgalery" />
+        <argument
+            android:name="gambardetailgalery"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_detailGaleryFragment_to_photoFragment"
+            app:destination="@id/photoFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailPrestasiFragment"
+        android:name="com.dzak.myapplication.Fragment.fragment.prestasi.DetailPrestasiFragment"
+        android:label="fragment_detail_prestasi"
+        tools:layout="@layout/fragment_detail_prestasi" >
+        <argument
+            android:name="detailjudulprestasi"
+            app:argType="string"
+            android:defaultValue="detailjudulprestasi" />
+        <argument
+            android:name="detailgambarprestasi"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="deskdetailprestasi"
+            app:argType="string"
+            android:defaultValue="deskdetailprestasi" />
+        <action
+            android:id="@+id/action_detailPrestasiFragment_to_prestasiFragment"
+            app:destination="@id/prestasiFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailHomeFragment"
+        android:name="com.dzak.myapplication.Fragment.fragment.home.DetailHomeFragment"
+        android:label="fragment_detail_home"
+        tools:layout="@layout/fragment_detail_home" >
+        <argument
+            android:name="detailjudulhome"
+            app:argType="string"
+            android:defaultValue="detailjudulhome" />
+        <argument
+            android:name="detaildeskhome"
+            app:argType="string"
+            android:defaultValue="detaildeskhome" />
+        <argument
+            android:name="detailgambarhome"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_detailHomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+</navigation>
